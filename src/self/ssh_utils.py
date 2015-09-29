@@ -1,10 +1,11 @@
 #!/usr/local/bin/python3.4
 
-import logging
-import paramiko
-import socket
 import functools
+import logging
+import socket
 import subprocess
+
+import paramiko
 
 
 def execute_cmd_over_ssh(host_ip, host_username, host_password, command):
@@ -92,6 +93,7 @@ def entry_exit(excludeIndex=[], excludeName=[]):
     return f
 
 
+@entry_exit([], [])
 def execute_cmd_on_local(command):
     """
     the funcjtion is to execute command on local server
