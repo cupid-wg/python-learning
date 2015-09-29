@@ -91,6 +91,7 @@ def entry_exit(excludeIndex=[], excludeName=[]):
         return wrapper
     return f
 
+
 def execute_cmd_on_local(command):
     """
     the funcjtion is to execute command on local server
