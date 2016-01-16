@@ -1,7 +1,7 @@
 from abc import ABC, ABCMeta, abstractmethod
 
 
-class parentObj(ABC):
+class parentObj(object, metaclass=ABCMeta):
 
     @abstractmethod
     def print_a(self):
@@ -41,6 +41,12 @@ class childC(childA, childB):
     def print_b(self):
         return childB.print_b(self)
 
+
+class childD(parentObj):
+
+    def print_a(self):
+        print("childD.print_a")
+
 child_c = childC()
 # should call childA function
 child_c.print_child_a()
@@ -50,3 +56,5 @@ child_c.print_child_b()
 child_c.print_a()
 # should call childB function
 child_c.print_b()
+# here should throw exception
+child_d = childD()
